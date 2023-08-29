@@ -14,7 +14,8 @@
         "test": "npm run build:wasm:nodejs && npm run test:quick",
         "test:quick": "node --experimental-vm-modules node_modules/jest/bin/jest",
         "package": "rimraf ./pkg && run-s build test && pkg -t node14-linux,node14-win,node14-macos bin/mo-fmt.js -o pkg/mo-fmt",
-        "prepublishOnly": "run-s build test:quick"
+        "prepublishOnly": "run-s build test:quick",
+        "publish-to-branch": "git-publish"
     },
     "dependencies": {
         "out-of-character": "^1.2.1"
@@ -22,6 +23,7 @@
     "devDependencies": {
         "@types/jest": "^28.1.7",
         "fast-glob": "^3.2.11",
+        "git-publish": "^2.0.0",
         "jest": "^28.1.3",
         "npm-run-all": "^4.1.5",
         "pkg": "^5.8.0",

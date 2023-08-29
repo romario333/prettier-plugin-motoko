@@ -3,7 +3,8 @@ import {
     TokenTree,
     GroupType,
 } from './../../parsers/motoko-tt-parse/parse';
-import { doc, AstPath, Doc, ParserOptions } from 'prettier';
+import type { AstPath, Doc, ParserOptions } from 'prettier';
+import { builders } from 'prettier/doc';
 import spaceConfig, { doesTokenTreeMatchPattern } from './spaceConfig';
 import {
     getToken,
@@ -28,22 +29,20 @@ export type Space =
 
 // Documentation: https://github.com/prettier/prettier/blob/main/commands.md
 const {
-    builders: {
-        group,
-        fill,
-        ifBreak,
-        breakParent,
-        indent,
-        indentIfBreak,
-        // label,
-        line,
-        softline,
-        hardline,
-        lineSuffix,
-        hardlineWithoutBreakParent,
-        literallineWithoutBreakParent,
-    },
-} = doc;
+    group,
+    fill,
+    ifBreak,
+    breakParent,
+    indent,
+    indentIfBreak,
+    // label,
+    line,
+    softline,
+    hardline,
+    lineSuffix,
+    hardlineWithoutBreakParent,
+    literallineWithoutBreakParent,
+} = builders;
 
 const space = ' ';
 // const wrapIndent = indent(line);
